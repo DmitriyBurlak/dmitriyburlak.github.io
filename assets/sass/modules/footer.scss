@@ -1,0 +1,62 @@
+footer {
+  margin-bottom: 4rem;
+
+  @media (max-width: 850px) {
+    margin-bottom: 1rem;
+  }
+}
+
+.social {
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+  z-index: 5;
+  transition: all 5s;
+
+  @media (max-width: 540px) {
+    text-align: center;
+  }
+
+  a {
+    margin-right: 1rem;
+    text-decoration: none;
+
+    .icon {
+      display: inline-block;
+      width: 40px;
+      height: 35px;
+      background-size: cover;
+      transition: all 0.2s;
+
+      @media (max-width: 1024px) {
+        width: 35px;
+        height: 31px;
+      }
+    }
+    
+    .icon-vk {
+      background-image: url(../img/social/vk.svg);
+      width: 42px;
+      height: 35px;
+
+      @media (max-width: 1024px) {
+        width: 39px;
+        height: 33px;
+      }
+    }
+    
+    .icon-inst {
+      background-image: url(../img/social/inst.svg);
+    }
+    .icon-github {
+      background-image: url(../img/social/git.svg);
+    }
+    .icon-facebook {
+      background-image: url(../img/social/facebook.svg);
+    }
+    .icon:hover,
+    .icon:focus {
+      filter: invert(100%) sepia(35%) saturate(4559%) hue-rotate(316deg) brightness(104%) contrast(106%);
+    }
+  }
+}
