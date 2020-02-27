@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,UAAU,EAAE,OAAO;EACnB,OAAO,EAAE,CAAC;EACV,SAAS,EAAE,aAAa;CACzB",
+    "sources": [
+        "../sass/modules/effects.scss"
+    ],
+    "names": [],
+    "file": "effects.css"
+}
