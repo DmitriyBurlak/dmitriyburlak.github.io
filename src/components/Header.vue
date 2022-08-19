@@ -3,15 +3,9 @@
         <div class="header__menu">
             <div class="header__name">dmitriy burlak</div>
             <ul>
-                <!-- <li><router-link to="/">_hello</router-link></li>
-                <li><router-link to="about_me">_about me</router-link></li>
-                <li><router-link to="project">_project</router-link></li> -->
-                <!-- <li><router-link to="contact">_contact</router-link></li> -->
-              
                 <router-link to="/" custom v-slot="{ navigate, isActive }"><li :class="{active: isActive}" @click="navigate"><a href="#">_hello</a></li></router-link>
                 <router-link to="about_me" custom v-slot="{ navigate, isActive }"><li :class="{active: isActive}" @click="navigate"><a href="#">_about me</a></li></router-link>
                 <router-link to="project" custom v-slot="{ navigate, isActive }"><li :class="{active: isActive}" @click="navigate"><a href="#" >_project</a></li></router-link>
-               
             </ul>
         </div>    
         <ul>

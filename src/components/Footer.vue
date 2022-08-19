@@ -1,19 +1,22 @@
 <template>
     <div class="footer">
-        <div className="links">
-            <span class="find">find me in:</span>
-            <ul>
+        <div className="find-me">
+            <span class="find-me__text">find me in:</span>
+            <ul class="find-me__list">
                 <li> 
-                    <a src="" v-html="iconTelegram"></a>
+                    <a class="icon-link" href="https://t.me/dmburlak" target="_blank" v-html="iconTelegram"></a>
                 </li>
                 <li>
-                    <a src="" v-html="iconGit"></a>
+                    <a class="icon-link" href="https://github.com/DmitriyBurlak" target="_blank" v-html="iconLinkedin"></a>
                 </li>
-                <router-link to="https://gitlab.shercargo.ru/burlak.da">tes</router-link>
             </ul>
         </div>
-
-        
+        <div class="footer__rigth">
+            <a class="icon-link" href="https://github.com/DmitriyBurlak" target="_blank">
+                <span class="icon-link__text">@dmitriyburlak</span>
+                <span class="icon" v-html="iconGit"></span>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -24,15 +27,40 @@ import { Icon } from '../assets/constants.js'
             return {
                 count: new Date().toDateString(),
                 iconTelegram: Icon.telegram,
-                iconGit: Icon.linkedin,
+                iconLinkedin: Icon.linkedin,
+                iconGit: Icon.github,
             }
         },
-
     }
 </script>
 
 
 <style lang="scss">
+.icon-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &__text {
+        color: #607B96;
+        padding-right: 10px;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+    }
+
+    &:hover {
+        .icon-link__text {
+            color: #a3b9cf;
+        }
+        svg {
+            filter: invert(99%) sepia(70%) saturate(2873%) hue-rotate(172deg) brightness(306%) contrast(60%);
+        }
+    }
+}
+
 .footer {
     border-top: 1px solid #1E2D3D;
     display: flex;
@@ -40,40 +68,38 @@ import { Icon } from '../assets/constants.js'
     justify-content: space-between;
     padding: 0 20px;
 
-    .links {
+    &__rigth {
         display: flex;
         align-items: center;
+        border-left: 1px solid #1E2D3D;
+        padding: 10px 0 10px 10px;
 
-        .find {
-            // margin-right: 10px;
-            padding: 10px 10px 10px 0px;
+        .text {
+            padding-right: 10px;
         }
     }
 
-    ul {
+    .find-me {
         display: flex;
-        height: 100%;
+        align-items: center;
 
-        li {
-            width: 40px;
-            border-right: 1px solid #1E2D3D;
+        &__text {
+            padding: 10px 10px 10px 0px;
+        }
+
+        &__list {
             display: flex;
-            justify-content: center;
-            
-            a {
-                cursor: pointer;
+            height: 100%;
+
+            li {
+                width: 42px;
+                padding: 5px;
+                border-right: 1px solid #1E2D3D;
                 display: flex;
-                align-items: center;
-            }
+                justify-content: center;
 
-            &:first-child {
-                border-left: 1px solid #1E2D3D;
-            }
-
-            &:hover {
-                svg {
-                    filter: invert(99%) sepia(70%) saturate(2873%) hue-rotate(172deg) brightness(306%) contrast(60%);
-                    // fill: #fff;
+                &:first-child {
+                    border-left: 1px solid #1E2D3D;
                 }
             }
         }
