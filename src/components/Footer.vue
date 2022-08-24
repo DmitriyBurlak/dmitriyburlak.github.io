@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <footer class="footer">
         <div className="find-me">
             <span class="find-me__text">find me in:</span>
             <ul class="find-me__list">
@@ -17,7 +17,7 @@
                 <span class="icon" v-html="iconGit"></span>
             </a>
         </div>
-    </div>
+    </footer>
 </template>
 
 <script> 
@@ -44,6 +44,12 @@ import { Icon } from '../assets/constants.js'
     &__text {
         color: #607B96;
         padding-right: 10px;
+        // transition: color 0.2s linear;
+
+    }
+
+    svg {
+        // transition: all 0.1s linear;
     }
 
     .icon {
@@ -93,7 +99,7 @@ import { Icon } from '../assets/constants.js'
 
             li {
                 width: 42px;
-                padding: 5px;
+                padding: 9px;
                 border-right: 1px solid #1E2D3D;
                 display: flex;
                 justify-content: center;

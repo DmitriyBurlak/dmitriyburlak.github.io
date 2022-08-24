@@ -1,7 +1,7 @@
 <template>
     <div class="layout">
-        <Sidebar />
-        <div class="main">
+        <Sidebar :route="route" />
+        <div class="content" :class="route.name == 'main' && 'flex'">
             <slot></slot>
         </div>
     </div>
@@ -10,14 +10,15 @@
 <script>
 
 import Sidebar from './Sidebar/Sidebar.vue';
-import Main from '../views/Main.vue';
+import { useRoute } from 'vue-router';
+
 export default {
-    components: { Sidebar, Main },
-    // data() {
-    //     return {
-    //         route : useRoute()
-    //     }
-    // }
+    components: { Sidebar },
+    data() {
+        return {
+            route : useRoute(),
+        }
+    }
 }
 </script>
 
@@ -26,5 +27,13 @@ export default {
         display: flex;
         height: 100vh;
     }
-
+    .content {
+        width: calc(100% - 300px);
+        height: 100%;
+    }
+    .flex {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
 </style>

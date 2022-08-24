@@ -1,7 +1,7 @@
 <template>
-    <div class="header">
+    <header class="header">
         <div class="header__menu">
-            <div class="header__name">dmitriy burlak</div>
+            <div class="header__name">Dmitriy Burlak</div>
             <ul>
                 <router-link to="/" custom v-slot="{ navigate, isActive }"><li :class="{active: isActive}" @click="navigate"><a href="#">_hello</a></li></router-link>
                 <router-link to="about_me" custom v-slot="{ navigate, isActive }"><li :class="{active: isActive}" @click="navigate"><a href="#">_about me</a></li></router-link>
@@ -11,7 +11,7 @@
         <ul>
             <router-link to="contact" custom v-slot="{ navigate, isActive }"><li class="contact" :class="{active: isActive}" @click="navigate"><a href="#" >_contact</a></li></router-link>    
         </ul>
-    </div>
+    </header>
 </template>
 
 <script>
@@ -34,7 +34,7 @@
 
     &__name {
         width: 300px;
-        padding: 10px 35px;
+        padding: 10px 20px;
         border-right: 1px solid #1E2D3D;
     }
 
@@ -46,17 +46,17 @@
             border-right: 1px solid #1E2D3D;
             margin-bottom: -1px;
             cursor: pointer;
-            transition: color .3s linear;
+            // transition: color .2s linear;
 
             a {
                 text-decoration: none;
                 color: #607B96;
-                transition: color 0.3s linear;
+                // transition: color 0.2s linear;
             }
 
             &:hover {
                 a {
-                    color: #7c91a7;
+                    color: #a3b9cf;
                 }
             }
 

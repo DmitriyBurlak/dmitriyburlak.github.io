@@ -1,7 +1,7 @@
 <template>
-    <div class="sidebar" :class="route.name == 'main' && 'hidden'" >
+    <div class="sidebar" :class="route.name == 'main' && 'hidden'">
         <div class="sidebar__item" v-for="(elem, idx) in dataSideBar.menu" :key="idx">
-            <div class="sidebar__item__title">{{elem.title}}</div>
+            <div class="sidebar__item__title"><span class="icon" v-html="iconDownOne"></span>{{elem.title}}</div>
             <ul class="sidebar__item__list">
                 <li v-for="(item, key) in elem.items" :key="key">{{item.name}}</li>
             </ul>
@@ -20,12 +20,11 @@
 </template>
 
 <script>
-import { useRoute } from 'vue-router';
-
+import { Icon } from '../../assets/constants.js'
 export default {
     data() {
         return {
-            route : useRoute(),
+            iconDownOne: Icon.downOne,
             dataSideBar: {
                 menu: [
                     {
@@ -61,7 +60,8 @@ export default {
                 ]
             }
         }
-    }
+    },
+    props: ['route']
 }
 </script>
 
@@ -78,9 +78,13 @@ export default {
             }
 
             &__title {
-                padding: 10px 35px;
+                padding: 10px 20px;
                 color: #fff;
                 border-bottom: 1px solid #1E2D3D;
+
+                .icon {
+                    padding-right: 5px;
+                }
             }
 
             &__list {
@@ -90,6 +94,16 @@ export default {
 
                     &:last-child {
                         padding-bottom: 0;
+                    }
+                }
+            }
+
+            .active {
+                .sidebar__item__title {
+                    .icon {
+                        svg {
+                            transform: scale(1, -1);
+                        }
                     }
                 }
             }

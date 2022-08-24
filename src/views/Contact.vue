@@ -1,10 +1,5 @@
 <template>
-   <div class="sidebar">
-        menu
-   </div>
-   <div class="body">
-        contact
-   </div>
+   contact
 </template>
 
 <script>
