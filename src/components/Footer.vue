@@ -7,7 +7,7 @@
                     <a class="icon-link" href="https://t.me/dmburlak" target="_blank" v-html="iconTelegram"></a>
                 </li>
                 <li>
-                    <a class="icon-link" href="https://github.com/DmitriyBurlak" target="_blank" v-html="iconLinkedin"></a>
+                    <a class="icon-link" href="https://www.linkedin.com/in/dmitriy-burlak-4868a01a6/" target="_blank" v-html="iconLinkedin"></a>
                 </li>
             </ul>
         </div>

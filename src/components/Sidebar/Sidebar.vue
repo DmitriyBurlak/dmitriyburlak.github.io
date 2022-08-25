@@ -1,21 +1,11 @@
 <template>
     <div class="sidebar" :class="route.name == 'main' && 'hidden'">
-        <div class="sidebar__item" v-for="(elem, idx) in dataSideBar.menu" :key="idx">
+        <div class="sidebar__item" v-for="(elem, idx) in dataSideBar.menu" :key="idx" :class="elem.active && 'active'" @click="elem.active = !elem.active" >
             <div class="sidebar__item__title"><span class="icon" v-html="iconDownOne"></span>{{elem.title}}</div>
             <ul class="sidebar__item__list">
                 <li v-for="(item, key) in elem.items" :key="key">{{item.name}}</li>
             </ul>
         </div>
-
-
-        <!-- <div class="sidebar__item">
-            <div class="sidebar__item__title">contacts</div>
-            <ul class="sidebar__item__list">
-                <li>user name</li>
-                <li>89788106758</li>
-                <li>main88@mail.com</li>
-            </ul>
-        </div> -->
     </div>
 </template>
 
@@ -29,16 +19,20 @@ export default {
                 menu: [
                     {
                         title: "personal-info",
+                        active: true,
                         items: [
                             {
+                                type: "link",
                                 name: "bio",
-                                link: "/to"
+                                link: "/to",
                             },
                             {
+                                type: "link",
                                 name: "interesting",
                                 link: "/interesting"
                             },
                             {
+                                type: "link",
                                 name: "university",
                                 link: "/university"
                             },
@@ -46,12 +40,20 @@ export default {
                     },
                     {
                         title: "contacts",
+                        active: true,
                         items: [
                             {
+                                type: "link",
                                 name: "Email@mail.ru",
                                 link: "/to"
                             },
                             {
+                                type: "link",
+                                name: "89788107869",
+                                link: "/interesting"
+                            },
+                            {
+                                type: "folder",
                                 name: "89788107869",
                                 link: "/interesting"
                             },
@@ -71,8 +73,6 @@ export default {
         border-right: 1px solid #1E2D3D;
 
         &__item {
-            border-bottom: 1px solid #1E2D3D;
-
             &:last-child {
                 border-bottom: none;
             }
@@ -81,6 +81,7 @@ export default {
                 padding: 10px 20px;
                 color: #fff;
                 border-bottom: 1px solid #1E2D3D;
+                cursor: pointer;
 
                 .icon {
                     padding-right: 5px;
@@ -88,17 +89,23 @@ export default {
             }
 
             &__list {
-                padding: 10px 35px;
+                padding: 0px 35px;
+                overflow: hidden;
+                max-height: 0;
+                border-bottom: 1px solid #1E2D3D;
+
+                transition: all 0.4s ease-out;
+
                 li {
                     padding-bottom: 5px;
-
-                    &:last-child {
-                        padding-bottom: 0;
-                    }
                 }
             }
 
-            .active {
+            &.active {
+                .sidebar__item__list {
+                    padding: 10px 35px;
+                    max-height: 200px;
+                }
                 .sidebar__item__title {
                     .icon {
                         svg {
