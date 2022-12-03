@@ -1,23 +1,32 @@
 <template>
     <header class="header">
         <div class="header__menu">
-            <div class="header__name">Dmitriy Burlak</div>
+            <div class="header__name">{{ AboutMeStore.name }}</div>
             <ul>
-                <router-link to="/" custom v-slot="{ navigate, isActive }"><li :class="{active: isActive}" @click="navigate"><a href="#">_hello</a></li></router-link>
-                <router-link to="about_me" custom v-slot="{ navigate, isActive }"><li :class="{active: isActive}" @click="navigate"><a href="#">_about me</a></li></router-link>
-                <router-link to="project" custom v-slot="{ navigate, isActive }"><li :class="{active: isActive}" @click="navigate"><a href="#" >_project</a></li></router-link>
+                <router-link to="/" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li :class="{active: isActive}" @click="navigate"><a href="#">_hello</a></li></router-link>
+                <router-link to="about_me" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li :class="{active: isActive}" @click="navigate"><a href="#">_about me</a></li></router-link>
+                <router-link to="project" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li :class="{active: isActive}" @click="navigate"><a href="#" >_project</a></li></router-link>
             </ul>
         </div>    
         <ul>
-            <router-link to="contact" custom v-slot="{ navigate, isActive }"><li class="contact" :class="{active: isActive}" @click="navigate"><a href="#" >_contact</a></li></router-link>    
+            <router-link to="contact" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li class="contact" :class="{active: isActive}" @click="navigate"><a href="#" >_contact</a></li></router-link>    
         </ul>
     </header>
 </template>
 
-<script>
-    export default {
+<script setup lang="ts">
+// import { RouterLink, useLink } from 'vue-router'
+// import { defineProps } from 'vue'
+import { useAboutMeStrore } from '../stores/about_me.store'
+const AboutMeStore = useAboutMeStrore();
 
-    }
+// const props = defineProps({
+//     ...RouterLink.props,
+//     inactiveClass: String,
+// }) 
+
+// const { navigate, href, route, isActive, isExactActive } = useLink(props)
+   
 </script>
 
 

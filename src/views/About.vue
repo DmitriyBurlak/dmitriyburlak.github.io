@@ -1,6 +1,11 @@
 <template>
-    
-   <prism-editor class="my-editor" v-model="code" :highlight="highlighter" line-numbers></prism-editor>
+    <div class="About">
+        <div class="wrapper">
+            <h1>in development</h1>
+        </div>
+    </div>
+   
+   <!-- <prism-editor class="my-editor" v-model="code" :highlight="highlighter" line-numbers></prism-editor> -->
 </template>
 
 <script>
@@ -38,6 +43,16 @@ export default {
 </script>
 
 <style lang="scss">
+.About {
+    height: 100%;
+    .wrapper {
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+}
 .my-editor {
     .comment {
         

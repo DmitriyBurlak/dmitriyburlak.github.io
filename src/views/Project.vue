@@ -1,7 +1,10 @@
 <template>
-<div>
+<div class="Project">
+  <div class="wrapper">
+    <h1>in development</h1>
+  </div>
 
-<prism-editor class="my-editor" v-model="code" :highlight="highlighter" line-numbers></prism-editor>
+<!-- <prism-editor class="my-editor" v-model="code" :highlight="highlighter" line-numbers></prism-editor> -->
 
 </div>
 
@@ -32,6 +35,17 @@ export default {
 </script>
 
 <style lang="scss">
+.Project {
+    height: 100%;
+    .wrapper {
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+}
+
 .my-editor {
   line-height: 1.5;
   padding: 5px;

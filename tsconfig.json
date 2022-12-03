@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "baseUrl": ".",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "preserve",
+    "allowJs": true,
+    "preserveSymlinks": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "paths": { "@/*": ["src/*"], },
+  }
+}

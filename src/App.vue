@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="app__wrapper">
         <Header />
         <Layout>
             <router-view></router-view>
@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
-import Layout from './components/Layout.vue';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import Layout from '@/components/Layout.vue';
 
 export default {
   components: {Header, Footer, Layout}
@@ -38,7 +38,7 @@ export default {
     color: #607B96;
   }
 
-  .wrapper {
+  .app__wrapper {
     height: calc(100vh - 80px);
     background-color: #011627;
     margin: 40px;

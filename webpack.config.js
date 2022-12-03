@@ -4,9 +4,12 @@ const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 require('babel-polyfill');
 
+if (process.env.API)
+  console.log(`==> Proxying /api requests to ${process.env.API}`)
+
 module.exports = {
     entry: {
-        main: ['babel-polyfill', "./src/main.js"]
+        main: ['babel-polyfill', "./src/index.js"]
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -15,9 +18,10 @@ module.exports = {
         static: {
           directory: path.join(__dirname, 'public'),
         },
+        open: true,
         compress: true,
-        port: 9000,
-      },
+        port: 9900,
+    },
     module: {
         rules: [
             {
@@ -29,6 +33,19 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.ts(x?)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            configFile: path.resolve(__dirname, './tsconfig.json'),
+                            appendTsSuffixTo: [/\.vue$/]
+                        }
+                    }
+                ]
             },
             {
                 test: /\.vue$/,
@@ -44,6 +61,13 @@ module.exports = {
                 ]
             },
         ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js', '.vue'],
+        alias: {
+            "@": path.resolve(__dirname, './src'),
+            // "~libs": path.resolve(__dirname, "..", "..", "app/javascript/lib"),
+        },
     },
     plugins: [
         new VueLoaderPlugin(),
