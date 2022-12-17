@@ -36,20 +36,16 @@ import { Icon } from '../assets/constants.js'
 
 
 <style lang="scss">
+@import 'src/assets/scss/colors.scss';
+
 .icon-link {
     display: flex;
     align-items: center;
     text-decoration: none;
 
     &__text {
-        color: #607B96;
+        color: $text-grey;
         padding-right: 10px;
-        // transition: color 0.2s linear;
-
-    }
-
-    svg {
-        // transition: all 0.1s linear;
     }
 
     .icon {
@@ -59,7 +55,7 @@ import { Icon } from '../assets/constants.js'
 
     &:hover {
         .icon-link__text {
-            color: #a3b9cf;
+            color: $text-hover;
         }
         svg {
             filter: invert(99%) sepia(70%) saturate(2873%) hue-rotate(172deg) brightness(306%) contrast(60%);
@@ -68,7 +64,7 @@ import { Icon } from '../assets/constants.js'
 }
 
 .footer {
-    border-top: 1px solid #1E2D3D;
+    border-top: 1px solid $border;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -77,7 +73,7 @@ import { Icon } from '../assets/constants.js'
     &__rigth {
         display: flex;
         align-items: center;
-        border-left: 1px solid #1E2D3D;
+        border-left: 1px solid $border;
         padding: 10px 0 10px 10px;
 
         .text {
@@ -100,12 +96,12 @@ import { Icon } from '../assets/constants.js'
             li {
                 width: 42px;
                 padding: 9px;
-                border-right: 1px solid #1E2D3D;
+                border-right: 1px solid $border;
                 display: flex;
                 justify-content: center;
 
                 &:first-child {
-                    border-left: 1px solid #1E2D3D;
+                    border-left: 1px solid $border;
                 }
             }
         }

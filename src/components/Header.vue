@@ -31,11 +31,13 @@ const AboutMeStore = useAboutMeStrore();
 
 
 <style lang="scss">
+@import 'src/assets/scss/colors.scss';
+
 .header {
     display: flex;
     justify-content: space-between;
-    background-color: #02101c;
-    border-bottom: 1px solid #1E2D3D;
+    background-color: $main-dark;
+    border-bottom: 1px solid $border;
 
     &__menu {
         display: flex;
@@ -44,7 +46,7 @@ const AboutMeStore = useAboutMeStrore();
     &__name {
         width: 300px;
         padding: 10px 20px;
-        border-right: 1px solid #1E2D3D;
+        border-right: 1px solid $border;
     }
 
     ul {
@@ -52,35 +54,33 @@ const AboutMeStore = useAboutMeStrore();
 
         li {
             padding: 10px 35px;
-            border-right: 1px solid #1E2D3D;
+            border-right: 1px solid $border;
             margin-bottom: -1px;
             cursor: pointer;
-            // transition: color .2s linear;
 
             a {
                 text-decoration: none;
-                color: #607B96;
-                // transition: color 0.2s linear;
+                color: $text-grey;
             }
 
             &:hover {
                 a {
-                    color: #a3b9cf;
+                    color: $text-hover;
                 }
             }
 
             &.active {
-                border-bottom: 3px solid #a13434;
+                border-bottom: 3px solid $red;
                 padding-bottom: 7px;
                 a {
-                    color: #fff;
+                    color: $white;
                 }
             }
         }
 
         .contact { 
             border-right: none;
-            border-left: 1px solid #1E2D3D;
+            border-left: 1px solid $border;
         }
     }
 }

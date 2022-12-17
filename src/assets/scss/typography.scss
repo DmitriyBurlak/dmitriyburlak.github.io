@@ -1,0 +1,140 @@
+@mixin h1 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+}
+@mixin h1-mobile {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 25px;
+}
+
+@mixin h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.165493px;
+}
+@mixin h2-mobile {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.165493px;
+}
+@mixin h3 {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 25px;
+}
+@mixin h3-mobile {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@mixin h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin body-1 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+@mixin body-1-mobile {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.6px;
+}
+
+@mixin body-2 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18.76px;
+}
+@mixin body-2-mobile {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 134%;
+}
+
+@mixin action-text-big {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+@mixin action-text-small {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+}
+@mixin action-text-small-mobile {
+  font-size: 12px;
+  line-height: 134%;
+  font-weight: 600;
+}
+
+@mixin small-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+@mixin small-text-status {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+@mixin subtitle-1 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+@mixin subtitle-1-mobile {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+@mixin subtitle-2 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+@mixin subtitle-2-mobile {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+@mixin subtitle-3 {
+  // font-weight: 300;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+@mixin custom-input {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin custom-input-error {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 134%;
+}
+
+@mixin timeslot {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin small-text2 {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+}

@@ -21,6 +21,9 @@ const AboutMeStore = useAboutMeStrore();
 </script>
 
 <style lang="scss">
+@import 'src/assets/scss/colors.scss';
+// 'src/css/mixins';
+
 .main {
   width: 100%;
   max-width: 1150px;
@@ -28,7 +31,7 @@ const AboutMeStore = useAboutMeStrore();
   padding: 0 25px;
 
   .about-me {
-    color: #E5E9F0;
+    color: $white;
 
     span {
       font-size: 18px;
@@ -40,7 +43,7 @@ const AboutMeStore = useAboutMeStrore();
     }
 
     .post {
-      color: #4D5BCE;
+      color: $blue;
       font-size: 32px;
       line-height: 50px;
     }
@@ -48,10 +51,10 @@ const AboutMeStore = useAboutMeStrore();
 }
 .rows {
   padding-top: 80px;
-  color: #E5E9F0;
+  color: $white;
 
   .comment {
-    color: #607B96;
+    color: $text-grey;
   }
 }
 </style>

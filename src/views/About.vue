@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'src/assets/scss/colors.scss';
+
 .About {
     height: 100%;
     .wrapper {
@@ -56,7 +58,7 @@ export default {
 .my-editor {
     .comment {
         
-        color: #607B96;
+        color: $text-grey
     }
     // .prism-editor__line-number {
     //     color: rgb(156, 156, 156);

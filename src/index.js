@@ -14,5 +14,3 @@ createApp(App)
     .use(router)
     .use(pinia)
     .mount('#app');
-
-//https://api.github.com/users/DmitriyBurlak

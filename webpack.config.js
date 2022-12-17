@@ -63,11 +63,12 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js', '.vue'],
+        extensions: ['.tsx', '.ts', '.js', '.vue', '.node'],
         alias: {
             "@": path.resolve(__dirname, './src'),
             // "~libs": path.resolve(__dirname, "..", "..", "app/javascript/lib"),
         },
+        // fallback: {
     },
     plugins: [
         new VueLoaderPlugin(),

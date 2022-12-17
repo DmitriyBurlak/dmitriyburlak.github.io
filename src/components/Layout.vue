@@ -27,27 +27,29 @@ export default {
 </script>
 
 <style lang="scss">
-    .layout {
-        display: flex;
-        height: 100vh;
-    }
-    .content {
-        width: calc(100% - 300px);
-        height: 100%;
-    }
-    .flex {
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-    .topbar {
-        border-bottom: 1px solid #1e2d3d;
-        width: 100%;
-        height: 38px;
-        display: none;
+@import 'src/assets/scss/colors.scss';
 
-        &.show {
-            display: block;
-        }
+.layout {
+    display: flex;
+    height: 100vh;
+}
+.content {
+    width: calc(100% - 300px);
+    height: 100%;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.topbar {
+    border-bottom: 1px solid $border;
+    width: 100%;
+    height: 38px;
+    display: none;
+
+    &.show {
+        display: block;
     }
+}
 </style>

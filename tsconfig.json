@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "sourceMap": true,
     "noImplicitAny": true,
     "strict": true,
@@ -12,6 +12,8 @@
     "preserveSymlinks": false,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "paths": { "@/*": ["src/*"], },
+    "paths": { 
+      "@/*": ["src/*"],
+    },
   }
 }
