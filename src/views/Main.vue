@@ -22,6 +22,7 @@ const AboutMeStore = useAboutMeStrore();
 
 <style lang="scss">
 @import 'src/assets/scss/colors.scss';
+@import 'src/assets/scss/mixins/display.scss';
 // 'src/css/mixins';
 
 .main {
@@ -35,17 +36,29 @@ const AboutMeStore = useAboutMeStrore();
 
     span {
       font-size: 18px;
+
+      @include sm-screen {
+        font-size: 22px;
+      }
     }
 
     .name {
       font-size: 62px;
       line-height: 70px;
+
+      // @include sm-screen {
+      //   font-size: 40px;
+      // }
     }
 
     .post {
       color: $blue;
       font-size: 32px;
       line-height: 50px;
+
+      @include sm-screen {
+        font-size: 22px;
+      }
     }
   }
 }

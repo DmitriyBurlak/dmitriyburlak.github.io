@@ -21,7 +21,8 @@
 </template>
 
 <script> 
-import { Icon } from '../assets/constants.js'
+import { Icon } from '../assets/constants.js';
+
     export default {
         data() {
             return {
@@ -37,6 +38,7 @@ import { Icon } from '../assets/constants.js'
 
 <style lang="scss">
 @import 'src/assets/scss/colors.scss';
+@import 'src/assets/scss/mixins/display.scss';
 
 .icon-link {
     display: flex;
@@ -69,6 +71,10 @@ import { Icon } from '../assets/constants.js'
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+
+    @include sm-screen { 
+        display: none;
+    }
 
     &__rigth {
         display: flex;

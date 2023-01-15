@@ -18,6 +18,7 @@ import DbNotification from '@/components/UX/db-notification.vue';
 
 <style lang="scss">
 @import 'src/assets/scss/app.scss';
+@import 'src/assets/scss/mixins/display.scss';
 
 .app__wrapper {
   height: calc(100vh - 80px);
@@ -29,5 +30,11 @@ import DbNotification from '@/components/UX/db-notification.vue';
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+
+  @include sm-screen { 
+    margin: 10px;
+    height: calc(100vh - 20px);
+  }
 }
 </style>

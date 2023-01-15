@@ -48,10 +48,19 @@ const props = defineProps<{
 
 <style lang="scss">
 @import 'src/assets/scss/colors.scss';
+@import 'src/assets/scss/mixins/display.scss';
 
 .sidebar {
     width: 300px;
     border-right: 1px solid $border;
+
+    @include md-screen { 
+        width: 250px;
+    }
+
+    @include sm-screen { 
+        width: 100%;
+    }
 
     &__item {
         &__label {
@@ -60,8 +69,17 @@ const props = defineProps<{
             border-bottom: 1px solid $border;
             cursor: pointer;
 
+            @include sm-screen { 
+                background-color: $back-disable;
+            }
+
             .label__icon {
                 padding-right: 5px;
+
+                svg {
+                    transform: rotate(-90deg);
+                    transition: transform 0.3s linear;
+                }
             }
         }
 
@@ -112,7 +130,8 @@ const props = defineProps<{
             .sidebar__item__label {
                 .label__icon {
                     svg {
-                        transform: scale(1, -1);
+                        // transform: scale(1, -1);
+                        transform: rotate(0);
                     }
                 }
             }

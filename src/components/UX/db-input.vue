@@ -136,7 +136,7 @@ export default {
             }
         }
         .label {
-            padding-bottom: 5px;
+            padding-bottom: 10px;
             pointer-events: none;
         }
 
@@ -199,7 +199,7 @@ export default {
         }
 
         .error__message {
-            padding-top: 8px;
+            padding-top: 4px;
             color: $red;
             display: none;
         }
