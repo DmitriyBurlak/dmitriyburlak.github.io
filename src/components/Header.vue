@@ -20,10 +20,10 @@
         </div>
         <div class="mobile-menu" :class="{active: isActiveMenu}">
             <ul class="header__menu__items">
-                <router-link to="/" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li :class="{active: isActive}" @click="closeMenu(), navigate()"><a href="#">_hello</a></li></router-link>
-                <router-link to="about_me" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li :class="{active: isActive}" @click="closeMenu(), navigate()"><a href="#">_about me</a></li></router-link>
-                <router-link to="project" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li :class="{active: isActive}" @click="closeMenu(), navigate()"><a href="#" >_project</a></li></router-link>
-                <router-link to="contact" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li class="contact" :class="{active: isActive}" @click="closeMenu(), navigate()"><a href="#" >_contact</a></li></router-link>    
+                <router-link to="/" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li :class="{active: isActive}" @click="closeMenu(), navigate()">_hello</li></router-link>
+                <router-link to="about_me" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li :class="{active: isActive}" @click="closeMenu(), navigate()">_about me</li></router-link>
+                <router-link to="project" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li :class="{active: isActive}" @click="closeMenu(), navigate()">_project</li></router-link>
+                <router-link to="contact" custom v-slot="{ navigate, isActive }: {navigate: any, isActive:any}"><li class="contact" :class="{active: isActive}" @click="closeMenu(), navigate()">_contact</li></router-link>    
             </ul>
             <div class="find-me">
                 <span class="find-me__text">find me in:</span>
