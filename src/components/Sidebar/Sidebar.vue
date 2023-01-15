@@ -21,8 +21,6 @@
             </template>
         </div>
     </div>
-    <!-- <div v-html="phone"></div>
-    {{phone}} -->
 </template>
 
 <script setup lang="ts">
