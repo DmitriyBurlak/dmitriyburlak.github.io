@@ -3,10 +3,17 @@
 		<div class="Contact__form">
 			<div class="wrapper">
 				<div class="block-form">
-					<db-input class="block-form__item" v-model="dataMessage.name.value" :error="dataMessage.name.error" label="_name:" length="50" type="string" />
-					<db-input class="block-form__item" v-model="dataMessage.phone.value" :error="dataMessage.phone.error" type="phone" label="_phone:" />
-					<db-input class="block-form__item" v-model="dataMessage.message.value" :error="dataMessage.message.error" textarea label="_message:" length="100" type="text" />
-					<db-button size="small" @click="sendMess">submit-message</db-button>
+					<div class="block-form__items" v-if="!isSuccessForm">
+						<db-input class="block-form__item" v-model="dataMessage.name.value" :error="dataMessage.name.error" label="_name:" length="50" type="string" />
+						<db-input class="block-form__item" v-model="dataMessage.phone.value" :error="dataMessage.phone.error" type="phone" label="_phone:" />
+						<db-input class="block-form__item" v-model="dataMessage.message.value" :error="dataMessage.message.error" textarea label="_message:" length="100" type="text" />
+						<db-button size="small" @click="sendMess">submit-message</db-button>
+					</div>
+					<div class="block-form__success" v-else>
+						<div class="title">Thank you! <span class="title__icon" v-html="Icon.success"></span></div>
+						<div class="text">Your message has been successfully delivered.</div>
+						<db-button size="small" @click="clearForm">back-to-form</db-button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -23,12 +30,14 @@ import {ref, computed} from 'vue'
 import dbInput from '@/components/UX/db-input.vue';
 import dbButton from '@/components/UX/db-button.vue';
 import LightCode from '@/components/LightCode/LightCode.vue';
+import { Icon } from '@/assets/constants.js'
 import { inputValidate } from '@/utils/inputUtil';
 import { useContactStore, messageForm }  from '@/stores/contact.store';
 
 const ContactStore = useContactStore();
 const dataMessage = ref(JSON.parse(JSON.stringify(messageForm)));
 
+let isSuccessForm = ref(false);
 let code = computed(() => `const button = document.querySelector('#sendBtn');
 
 const message = {
@@ -45,6 +54,7 @@ const clearForm = () => {
 	dataMessage.value.name.value = ''
 	dataMessage.value.phone.value = ''
 	dataMessage.value.message.value = ''
+	isSuccessForm.value = false
 }
 
 const sendMess = async () => {
@@ -61,7 +71,7 @@ let params = {
 ${message.value}`
 }
 		await ContactStore.sendMessage(params)
-			.then(() => clearForm())
+			.then(() => isSuccessForm.value = true)
 	}
 }
 
@@ -85,6 +95,7 @@ const checkValidation = () => {
 <style lang="scss">
 @import 'src/assets/scss/mixins/display.scss';
 @import 'src/assets/scss/colors.scss';
+@import 'src/assets/scss/typography.scss';
 
 .Contact {
 	height: calc(100% - 40px);
@@ -138,6 +149,31 @@ const checkValidation = () => {
 
 		&__item {
 			padding-bottom: 15px;
+		}
+
+		&__success {
+			text-align: center;
+
+			.title {
+				@include h2();
+				color: $white;
+				padding-bottom: 15px;
+				display: flex; 
+				align-items: center;
+				justify-content: center;
+
+				&__icon {
+					padding-left: 10px;
+					svg {
+						width: 30px;
+						filter: invert(85%) sepia(6%) saturate(400%) hue-rotate(191deg) brightness(112%) contrast(88%);
+					}
+				}
+			}
+
+			.text {
+				padding-bottom: 35px;
+			}
 		}
 	}
 }

@@ -1,10 +1,8 @@
 <template>
   <div class="LightCode">
     <ul class="LightCode__rows">
-        <!-- <li v-for="row in colRows" :key="row">{{ row }}</li> -->
-        <!-- {{ colRows }} -->
+        <li v-for="row in colRows" :key="row">{{ row }}</li>
     </ul>
-    {{ colRows }}
     <div class="LightCode__code" ref="blockCode" v-html="code"></div>
   </div>
 </template>
