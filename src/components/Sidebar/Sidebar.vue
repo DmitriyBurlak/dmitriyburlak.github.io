@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps } from 'vue'
+import { computed } from 'vue'
 import { useSidebarStore } from '@/stores/sidebar.store'
 import { Icon } from '@/assets/constants.js'
 import { RouteRecordName } from 'vue-router';

@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, onMounted, ref, computed, watch } from 'vue';
+import { onMounted, ref, computed, watch } from 'vue';
     const props = defineProps({
         code: String
     })

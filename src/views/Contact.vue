@@ -30,7 +30,7 @@ import {ref, computed} from 'vue'
 import dbInput from '@/components/UX/db-input.vue';
 import dbButton from '@/components/UX/db-button.vue';
 import LightCode from '@/components/LightCode/LightCode.vue';
-import { Icon } from '@/assets/constants.js'
+import { Icon } from '@/assets/constants.js';
 import { inputValidate } from '@/utils/inputUtil';
 import { useContactStore, messageForm }  from '@/stores/contact.store';
 
